@@ -13,9 +13,11 @@ public class cameraController : MonoBehaviour{
             void Start(){
                     currentCamera = 0;
                     for (int i = 0; i < cameraList.Length; i++){
+                        // deactivate all cameras 
                         cameraList[i].gameObject.SetActive(false);
                     }
                     if (cameraList.Length > 0){
+                        // activate the first camera
                         cameraList[0].gameObject.SetActive(true);
                     }
                 }

@@ -32,10 +32,13 @@ public class ballControll : MonoBehaviour
             float ballForce = Random.Range(1f, 8f);
             float ballHeight = Random.Range(1f, 8f);
             float ballAngle = Random.Range(0f, 360f);
+        // This function takes three parameters: radius, angle, and height.
+            // radius: The distance from the origin to the point.
             Vector3 ballDir = PolarToCartesian(-ballForce, ballAngle, ballHeight);
             rb.AddForce(ballDir , ForceMode.Impulse);
         }
-        
+        // radius * Mathf.Cos(angle * Mathf.Deg2Rad): Calculates the x-coordinate.
+        // radius * Mathf.Sin(angle * Mathf.Deg2Rad): Calculates the z-coordinate.
          Vector3 PolarToCartesian(float radius, float angle, float height)
         {
             float x = radius * Mathf.Cos(angle * Mathf.Deg2Rad);

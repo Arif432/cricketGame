@@ -10,6 +10,8 @@ public class ballScript : MonoBehaviour
     public Text wickets;
     public int wicketsLost = 0;
     public GameObject ball;
+
+    // static instance of GameManager which allows it to be accessed by any other script
     public static ballScript instance;
     public GameObject currBall;
     public Vector3 ballPos;
@@ -32,6 +34,7 @@ public class ballScript : MonoBehaviour
 
     public void ballThrow()
     {
+        // the object will be instantiated with its default rotation.
         Instantiate(ball, ballPos, Quaternion.identity);
     }
 

@@ -35,7 +35,9 @@ public class FieldController : MonoBehaviour
     {
         while (transform.position != originalPosition)
         {
+            // time*delta smooths out the movement so it's the same speed on all computers.
             transform.position = Vector3.MoveTowards(transform.position, originalPosition, returnSpeed * Time.deltaTime);
+            //  wait until the next frame before continuing the loop.
             yield return null;
         }
     }
